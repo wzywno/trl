@@ -11,9 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150921154018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "translations", force: :cascade do |t|
+    t.string   "text"
+    t.string   "target_language"
+    t.string   "source_language"
+    t.string   "target_text"
+    t.string   "text_format"
+    t.string   "uid"
+    t.string   "callback_url"
+    t.string   "tone"
+    t.string   "instructions"
+    t.integer  "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end
