@@ -1,0 +1,39 @@
+%h1 Listing translations
+
+%table
+  %thead
+    %tr
+      %th Text
+      %th Target language
+      %th Source language
+      %th Target text
+      %th Text format
+      %th Uid
+      %th Callback url
+      %th Tone
+      %th Instructions
+      %th Status
+      %th
+      %th
+      %th
+
+  %tbody
+    - @translations.each do |translation|
+      %tr
+        %td= translation.text
+        %td= translation.target_language
+        %td= translation.source_language
+        %td= translation.target_text
+        %td= translation.text_format
+        %td= translation.uid
+        %td= translation.callback_url
+        %td= translation.tone
+        %td= translation.instructions
+        %td= translation.status
+        %td= link_to 'Show', translation
+        %td= link_to 'Edit', edit_translation_path(translation)
+        %td= link_to 'Destroy', translation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Translation', new_translation_path

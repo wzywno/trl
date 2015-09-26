@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Text:
+  = @translation.text
+%p
+  %b Target language:
+  = @translation.target_language
+%p
+  %b Source language:
+  = @translation.source_language
+%p
+  %b Target text:
+  = @translation.target_text
+%p
+  %b Text format:
+  = @translation.text_format
+%p
+  %b Uid:
+  = @translation.uid
+%p
+  %b Callback url:
+  = @translation.callback_url
+%p
+  %b Tone:
+  = @translation.tone
+%p
+  %b Instructions:
+  = @translation.instructions
+%p
+  %b Status:
+  = @translation.status
+
+= link_to 'Edit', edit_translation_path(@translation)
+\|
+= link_to 'Back', translations_path
