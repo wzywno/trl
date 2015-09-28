@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  namespace :api, path: '/', constraints: { subdomain: 'api'} do
+  namespace :api, path: '/', constraints: { subdomain: 'api', format: 'json'} do
+    resources :translations
   end
   resources :translations
   # The priority is based upon order of creation: first created -> highest priority.
